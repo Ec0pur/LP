@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>PERTIDAKSAMAAN LINIER UJI</title>
+        <title>PERTIDAKSAMAAN LINIER</title>
         <style>
             #catatan{
                 font-size:8pt;
@@ -176,12 +176,12 @@
                     for(i=1;i<jumlahVar;i++){
                         inputTabel+='<div class="input-field"><input type="text" class="validate elemen"><label class="hide-on-med-and-down">Elemen ${i}</label><label class="hide-on-large-only">${i}</label></div>';
                     }
-                    for(let j=0,jumlahVar;j++){
+                    for(let j=0;jumlahVar;j++){
                         inputTabel+='<div class="input-field"><input type="number" class="validatehanyaAngka persamaan ${i}"><label>${huruf[j]+i}<label class="bintang">*</label></label></div>';
                     }
                     inputTabel+='<div class="input-field"><input type="number" class="validatehanyaAngka persamaan${i} kolomZ"><label>Z${i}<label class="bintang"></label></label></div>';
                     inputTabel+='<div class="input-field"><input type="text" class="validate" id="kolomFtujuan" value="Biaua/laba"><label>Z</label> </div>';
-                    for(let i=0,jumlahVar;i++){
+                    for(let i=0;jumlahVar;i++){
                         inputTabel+= '<div class="input-field"><input type="number" class="validatehanyaAngka barisZ"><label>${huruf[i]}z<label class="bintang">*</label></label></div>';
                     }
                     inputTabel+='<div class="input-field col s12"><a class="waves-effect wawes-ligh blue btn penuh" onclick="hitung()"><label class="hide-on-small-only putih bold">Hitung<i class="material-icons right">send</i></label><label class="hide-on-med-and-up"><i class="material-icons center putih">send</i></label></a></div>';
@@ -286,13 +286,13 @@
                             matriks1[i].forEach((a,b)=>teksPersamaan+=a+huruf[b]+'+');
                             teksPersamaan=teksPersamaan.slice(0,-3)+'</td><td>'+tanda+''+matriks[i][matriks[i].length-1]+'</td><td> &nbsp&nbsp&nbsp</td></tr>';
                         }
-                        teksPersamaan=teksPersamaan.replace(/(\+-)/g.'-');
+                        teksPersamaan=teksPersamaan.replace(/(\+-)/g,'-');
                         //console.log ('teksPersamaan');
                         console.table(matriks);
                         console.log('HP:{'+Z+'}');
                         z=z.map((a)=>parseFloat(a).toFixed(5));
                         console.log('HP (desimal) :{'+Z+'}');
-                        z=map.((a)=>parseInt(a));
+                        z=z.map((a)=>parseInt(a));
                         console.log('HP (bulat) :{'+Z+'}');
                         let teksHasil='';
                         for(let i=0; i<jumlahVar;i++)
@@ -306,7 +306,7 @@
                         document.querySelector('#hasil2').innerHTML='<table class="highligh tabelHasil centered"><thead><tr><th colspan="2"><h5 class="center"><b>FUngsi Tujuan</b></h5></th></tr></thead><tbody>${teksBarisZ}</td></tr></tbody></table><div><br></div><table class="highligh tabelHasil centered"><thead><tr><th colspan=3>FUngsi Kendala<h5 class="bold center"></h5></th></tr></thead><body>${tteksPersamaan)<tr><td class="right">A</td><td>>=0</td><td>$nbsp</td></tr><tr><td class="right">B</td><td>>=0</td><td>$nbsp</td></tr></body></table>';
                         document.querySelector('#hasil3').innerHTML='<table class="highligh tabelHasil">            <thead>                <tr>                    <th colspan="2"><h5 class="center"><b>Hasil Perhitungan</b></h5>                    </th>                </tr>            </thead>            <tbody> ${teksHasil}                <tr>                    <td class="td">Z</td>                    <td>=&nbsp${zAkhir}</td>                </tr>            </tbody></table><br><label id="catatan">Catatan:<br>Karena ini adalah pertidaksamaan linear, hasil perhitungan adalah bilangan bulat.</label>';
                     }//else
-                }//fungsi hitung
+                } //fungsi hitung
             }
 
         </script>
