@@ -284,7 +284,7 @@
                         for(let i=0;i<jumlahVar;i++){
                             teksPersamaan+='<tr><td class="right">';
                             matriks1[i].forEach((a,b)=>teksPersamaan+=a+huruf[b]+'+');
-                            teksPersamaan=teksPersamaan.slice(0,-3)
+                            teksPersamaan=teksPersamaan.slice(0,-3)+'</td><td>'+tanda+''+matriks[i][matriks[i].length-1]+'</td><td> &nbsp&nbsp&nbsp</td></tr>';
                         }
 
                     }
